@@ -4,12 +4,13 @@ defmodule ExClsx.MixProject do
   def project do
     [
       app: :ex_clsx,
-      version: "0.1.0",
+      version: "1.0.0",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       description: description(),
-      package: package()
+      package: package(),
+      source_url: "https://github.com/simonedavico/ex_clsx"
     ]
   end
 
@@ -29,9 +30,7 @@ defmodule ExClsx.MixProject do
 
   defp description do
     """
-    An utility module to concatenate strings fragments, filtering falsey values.
-    Inspired to https://github.com/lukeed/clsx, it is useful to produce class names
-    for components that depend on component attributes.
+    An utility module to concatenate strings fragments, filtering falsey values. Inspired to https://github.com/lukeed/clsx, it is useful to produce class names for components that depend on component attributes.
     """
   end
 
