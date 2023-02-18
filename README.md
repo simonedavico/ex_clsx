@@ -34,9 +34,41 @@ iex> ExClsx.clsx(["please", %{ "keep" => true, "discard" => false }])
 "please keep"
 ```
 
-# Use cases
+## Use cases
 
-TODO
+### CSS classes ordering
+
+`clsx` can be useful to keep CSS classes tidy, e.g. separate base classes and pseudo-states classes:
+
+```elixir
+clsx([
+  "rounded p-2 -ml-2 flex flex-row items-center",             # base
+  "hover:underline hover:bg-green-100",                       # hover
+  "focus:outline-none focus:bg-green-100 focus:underline"     # focus
+])
+```
+
+It is also useful in `Phoenix.Component` supporting the `attr` class, to merge with base classes:
+
+```elixir
+class =
+  clsx([
+    "isolate relative mx-auto mt-16 mb-16",
+    assigns[:class]
+  ])
+
+assigns = Map.put(assigns, :class, class)
+```
+
+And finally, to dinamically add classes, if you support simple variants through attributes:
+
+```elixir
+class =
+  clsx([
+    "isolate relative mx-auto mt-16 mb-16",
+    assigns[:big] && "size-big"
+  ])
+```
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
