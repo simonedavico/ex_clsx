@@ -13,7 +13,7 @@ by adding `ex_clsx` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:ex_clsx, "~> 0.1.0"}
+    {:ex_clsx, "~> 1.0.0"}
   ]
 end
 ```
